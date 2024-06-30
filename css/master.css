@@ -1,0 +1,595 @@
+/* Set Global Rouls */
+:root {
+  --blue-color: #0075ff;
+  --blue-alt-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+*:focus,
+* {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+/* End Global Roul */
+
+/* Start Dashboard */
+/* Start Sidebar */
+.page {
+  min-height: 200vh;
+  background-color: #f1f5f9;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--grey-color);
+}
+
+.sidebar {
+  width: 250px;
+  box-shadow: -2px 0px 6px black;
+}
+.sidebar > h3 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.sidebar > h3::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 50;
+  width: 70%;
+  height: 3px;
+  bottom: -15px;
+  left: 15%;
+}
+.sidebar > h3::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  bottom: -29px;
+  left: 50%;
+  transform: translate(-50%);
+  border: solid 6px white;
+}
+.sidebar ul {
+}
+.sidebar ul li {
+}
+.sidebar ul li a {
+  padding: 15px;
+  transition: 0.3s;
+  margin: 10px auto;
+}
+.sidebar ul li a i {
+  font-size: 28px;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+}
+.sidebar ul li span {
+  font-size: 19px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    width: 58px;
+    margin: 0;
+    padding: 5px;
+  }
+  .sidebar h3 {
+    font-size: 12px;
+    margin: 16px auto 20px;
+    font-weight: 800;
+  }
+  .sidebar h3::before,
+  .sidebar h3::after {
+    display: none;
+  }
+
+  .sidebar ul li span {
+    display: none;
+  }
+  .sidebar ul li a i {
+    font-size: 20px;
+  }
+}
+/* End Sidebar */
+/* Start head */
+.content {
+  overflow: hidden;
+}
+.head {
+  padding: 5px;
+  height: 70px;
+}
+.head .search {
+}
+.search::before {
+  content: "\f002"; /* Font Awesome search icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--grey-color);
+}
+.head .search input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding-left: 35px;
+  width: 160px;
+  transition: width 0.3s;
+}
+.head .search input:hover {
+  border: solid 2px gray;
+}
+.head .search input:focus {
+  width: 250px;
+  border: solid 2px gray;
+}
+.head .search input:focus::placeholder {
+  opacity: 0;
+}
+.icons {
+  align-items: center;
+}
+.icons img {
+  width: 50px;
+  padding: 0 7px;
+}
+.icons .notifaction img {
+  padding-right: 20px;
+}
+.head .icons .notification::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  left: 9px;
+  top: 0px;
+}
+/* End head */
+/* Start wrappper */
+.page h1 {
+  padding: 10px 20px 40px;
+  position: relative;
+}
+.wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin-right: 20px;
+  margin-left: 20px;
+}
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: minmax(230px, 1fr);
+    margin-right: 10px;
+    margin-left: 10px;
+    gap: 10px;
+  }
+}
+/* End wrapper */
+/* Start Welcome  */
+.welcome {
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .welcome .intro {
+    padding-bottom: 30px;
+  }
+}
+.welcome .intro img {
+  max-width: 100%;
+  width: 150px;
+}
+
+.wrapper .welcome .avatar img {
+  width: 72px;
+
+  border: solid 6px white;
+
+  margin-left: 20px;
+  margin-top: -36px;
+  border-radius: 50%;
+}
+.wrapper .welcome .info {
+  border-top: solid 1px #eee;
+  border-bottom: solid 1px #eee;
+}
+.wrapper .welcome .info > div {
+  font-weight: 19px;
+  flex: 1;
+}
+.wrapper .welcome .info > div > span {
+  padding: 10px 0 0;
+}
+.welcome a.visit {
+  margin: 0 15px 15px auto;
+  padding: 7px 16px;
+}
+.welcome a.visit:hover {
+  background-color: var(--blue-alt-color);
+}
+@media (max-width: 767px) {
+  .welcome a.visit {
+    margin-left: 20px;
+  }
+  .wrapper .welcome .info > div {
+    font-size: 18px;
+  }
+  .wrapper .welcome .info > div > span {
+    padding: 10px 0 30px;
+  }
+}
+/* End Welcome */
+/* Start Draft */
+.draft {
+}
+.draft h2 {
+  margin: 0;
+}
+.draft {
+}
+.draft form .title {
+  height: 40px;
+}
+.draft form textarea {
+  height: 200px;
+  resize: none;
+}
+.draft form input[type="submit"] {
+  margin: 0 15px 15px auto;
+  padding: 7px 16px;
+  border: none;
+}
+/* End Draft */
+/* Start Yearly golas */
+
+.targets .target-row .icon {
+  width: 78px;
+  height: 78px;
+  margin-right: 15px;
+}
+
+.target-row .details {
+  flex: 1;
+}
+
+.target-row .prograss {
+  height: 4px;
+}
+.target-row .prograss > span {
+  position: absolute;
+  height: 100%;
+}
+.target-row .prograss > span span {
+  position: absolute;
+  bottom: 15px;
+  right: -18px;
+  border-radius: 3px;
+  width: 36px;
+  text-align: center;
+  color: white;
+}
+
+.target-row .prograss > span span::before {
+  content: "";
+  border: solid 7px transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.target-row .prograss > .blue span::before {
+  border-top-color: var(--blue-color);
+}
+.target-row .prograss > .orange span::before {
+  border-top-color: var(--orange-color);
+}
+.target-row .prograss > .green span::before {
+  border-top-color: var(--green-color);
+}
+.blue .icon,
+.blue .prograss {
+  background-color: rgb(0 117 255 / 20%);
+}
+.orange .icon,
+.orange .prograss {
+  background-color: rgba(255, 136, 0, 0.3);
+}
+.green .icon,
+.green .prograss {
+  background-color: rgba(0, 255, 85, 0.3);
+}
+
+/* End Yearly Golas */
+/* Start Tickets */
+
+.tickets-holder .ticket {
+  width: calc(50% - 20px);
+}
+@media (max-width: 767px) {
+  .tickets-holder .ticket {
+    width: 100%;
+  }
+}
+/* End Tickets */
+/* Start News */
+.news .box {
+}
+@media (max-width: 767px) {
+  .news .box {
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .news .box .text p {
+    flex-grow: 1;
+    margin-bottom: 10px;
+  }
+}
+.news .box .image {
+  width: 120px;
+
+  overflow: hidden;
+}
+.news .box .text {
+  padding: 0 4px;
+}
+.news .box span {
+  height: fit-content;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.news .box .text p {
+  font-size: 14px;
+  text-wrap: wrap;
+}
+/* End News */
+/* Start Tasks */
+.tasks .task .info {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+.tasks .task .delete:hover {
+  color: red;
+  transform: scale(1.4);
+  transition: 0.3s;
+}
+
+/* End Tasks */
+/* Start Keywords */
+
+.keyword .item-row .row:first-child {
+  flex-grow: 1;
+}
+/* End KeyWord */
+
+/* Start Lastest Updates */
+
+.update-boxs .box .image {
+  width: 64px;
+}
+.update-boxs .box .text {
+  flex-grow: 1;
+}
+/* End Lastest Updated */
+
+/* Start Current Project Status */
+
+.current-project ul::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: var(--blue-color);
+  left: 28px;
+  margin-left: 16px;
+}
+.current-project ul li::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: var(--blue-color);
+  display: block;
+  border-radius: 50%;
+  background-color: white;
+  border: solid 2px white;
+  margin-right: 15px;
+  z-index: 1;
+
+  outline: 2px solid var(--blue-color);
+}
+.current-project ul li.done::before {
+  content: "";
+  background-color: var(--blue-color);
+  z-index: 1;
+}
+.current-project ul li.current::before {
+  content: "";
+  animation: project-status 0.7s infinite alternate;
+  background-color: var(--blue-color);
+  z-index: 1;
+}
+@keyframes project-status {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: var(--blue-color);
+  }
+}
+.current-project .launch-icon {
+  position: absolute;
+  right: 22px;
+  bottom: 50px;
+  opacity: 0.3;
+}
+/* End Current Project Status */
+
+/* Start Reminders */
+.remainders ul li .key {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+.remainders ul li .blue {
+  border-left: solid 3px var(--blue-color);
+  font-size: 16px;
+}
+.remainders ul li .orange {
+  border-left: solid 3px var(--orange-color);
+}
+.remainders ul li .green {
+  border-left: solid 3px var(--green-color);
+}
+.remainders ul li .red {
+  border-left: solid 3px var(--red-color);
+}
+.remainders ul li .grey {
+  border-left: solid 3px var(--grey-color);
+}
+/* End Reminders */
+/* Start Last Post */
+.post .top img {
+  width: 64px;
+  border-radius: 50%;
+}
+.post .content {
+  padding: 5px 5 10px;
+  line-height: 1.8;
+  border-top: solid 1px #eee;
+  border-bottom: solid 1px #eee;
+}
+/* End Last Post */
+
+/* Start Socail Media */
+
+.social-media .box i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55px;
+}
+.social-media .box {
+  padding-left: 70px;
+}
+.social-media .twitter {
+  background-color: rgb(0 0 0 / 10%);
+  color: black;
+}
+.twitter i,
+.twitter a {
+  background-color: black;
+  color: white;
+}
+.social-media .facebook {
+  background-color: rgb(0 117 255 / 30%);
+  color: var(--blue-color);
+}
+.facebook i,
+.facebook a {
+  background-color: var(--blue-color);
+  color: white;
+}
+.social-media .youtube {
+  background-color: rgba(255, 8, 0, 0.3);
+  color: red;
+}
+.youtube i,
+.youtube a {
+  background-color: red;
+  color: white;
+}
+.social-media .linkedin {
+  background-color: rgba(30, 134, 253, 0.3);
+  color: var(--blue-alt-color);
+}
+.linkedin i,
+.linkedin a {
+  background-color: var(--blue-alt-color);
+  color: white;
+}
+/* End Socail Media */
+/* Start Table */
+
+@media (max-width: 767px) {
+  .projects {
+    margin: 10px;
+  }
+}
+.responsive-table {
+  overflow-x: auto;
+}
+.projects table {
+  min-width: 1000px;
+}
+.projects thead td {
+  background-color: #eee;
+  font-weight: bold;
+}
+.projects table td {
+  padding: 15px;
+}
+.projects tbody td {
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  transition: 0.3s;
+}
+.projects table tbody tr td:last-child {
+  border-right: 1px solid #eee;
+}
+.projects tbody tr:hover td {
+  background-color: #faf7f7;
+}
+.projects table img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+}
+.projects table img:not(:first-child) {
+  margin-left: -20px;
+}
+.projects table .label {
+  font-size: 13px;
+}
+.responsive-table {
+}
+
+/* End Table */
+/* End Dashboard */
